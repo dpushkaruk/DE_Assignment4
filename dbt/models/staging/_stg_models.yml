@@ -1,0 +1,102 @@
+version: 2
+
+models:
+  - name: stg_products
+    columns:
+      - name: product_id
+        tests:
+          - unique
+          - not_null
+      - name: product_code
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_employees
+    columns:
+      - name: employee_id
+        tests:
+          - unique
+          - not_null
+      - name: department_id
+        tests:
+          - not_null
+          - relationships:
+              to: source('firepoint', 'departments')
+              field: department_id
+
+  - name: stg_sales_orders
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['draft', 'active', 'fulfilled', 'terminated']
+      - name: currency
+        tests:
+          - accepted_values:
+              values: ['USD', 'EUR']
+      - name: product_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_products')
+              field: product_id
+
+  - name: stg_production_orders
+    columns:
+      - name: prod_order_id
+        tests:
+          - unique
+          - not_null
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['planned', 'in_progress', 'completed', 'cancelled']
+
+  - name: stg_invoices
+    columns:
+      - name: invoice_id
+        tests:
+          - unique
+          - not_null
+      - name: source_type
+        tests:
+          - accepted_values:
+              values: ['sales_order', 'purchase_order']
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['issued', 'paid', 'overdue', 'cancelled']
+
+  - name: stg_negotiations
+    columns:
+      - name: negotiation_id
+        tests:
+          - unique
+          - not_null
+      - name: final_outcome
+        tests:
+          - accepted_values:
+              values: ['contract_signed', 'deal_lost', 'still_negotiating']
+
+  - name: stg_purchase_orders
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['ordered', 'shipped', 'delivered', 'partially_delivered', 'cancelled']
+
+  - name: stg_suppliers
+    columns:
+      - name: supplier_id
+        tests:
+          - unique
+          - not_null

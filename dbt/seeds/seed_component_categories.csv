@@ -1,0 +1,7 @@
+category_name,description,category_group
+Propulsion,"Engines, motors, fuel systems and thrust components",mechanical
+Avionics,"Navigation, flight control, sensors and guidance systems",electronic
+Airframe,"Structural components, fuselage, wings and aerodynamic surfaces",structural
+Warhead,"Payload delivery, detonation and fragmentation systems",ordnance
+Electronics,"Wiring, power supply, communication and imaging modules",electronic
+Software,"Firmware, navigation algorithms, encryption and telemetry",digital
