@@ -9,12 +9,10 @@ x-airflow-common: &airflow-common
     AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
     AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
     _PIP_ADDITIONAL_REQUIREMENTS: 'pandas duckdb mysql-connector-python minio dbt-core dbt-duckdb'
-    # mysql connection for ETL
     MYSQL_HOST: host.docker.internal
     MYSQL_USER: root
     MYSQL_PASSWORD: mainAWP666
     MYSQL_DATABASE: firepoint_db
-    # minio connection
     MINIO_ENDPOINT: minio:9000
     MINIO_ACCESS_KEY: minioadmin
     MINIO_SECRET_KEY: minioadmin
@@ -22,7 +20,7 @@ x-airflow-common: &airflow-common
   volumes:
     - ./dags:/opt/airflow/dags
     - ./data:/opt/airflow/data
-    - ./dbt_project:/opt/airflow/dbt_project
+    - ./dbt:/opt/airflow/dbt
     - ./duckdb:/opt/airflow/duckdb
     - ./logs:/opt/airflow/logs
   depends_on:

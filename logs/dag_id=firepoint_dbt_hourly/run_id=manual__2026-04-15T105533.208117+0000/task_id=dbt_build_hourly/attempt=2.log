@@ -1,0 +1,248 @@
+[2026-04-15T10:58:35.467+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-04-15T10:58:35.500+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: firepoint_dbt_hourly.dbt_build_hourly manual__2026-04-15T10:55:33.208117+00:00 [queued]>
+[2026-04-15T10:58:35.508+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: firepoint_dbt_hourly.dbt_build_hourly manual__2026-04-15T10:55:33.208117+00:00 [queued]>
+[2026-04-15T10:58:35.509+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 2
+[2026-04-15T10:58:35.522+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): dbt_build_hourly> on 2026-04-15 10:55:33.208117+00:00
+[2026-04-15T10:58:35.527+0000] {standard_task_runner.py:64} INFO - Started process 209 to run task
+[2026-04-15T10:58:35.531+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'firepoint_dbt_hourly', 'dbt_build_hourly', 'manual__2026-04-15T10:55:33.208117+00:00', '--job-id', '87', '--raw', '--subdir', 'DAGS_FOLDER/dbt_dag.py', '--cfg-path', '/tmp/tmp9xhzxo7d']
+[2026-04-15T10:58:35.533+0000] {standard_task_runner.py:91} INFO - Job 87: Subtask dbt_build_hourly
+[2026-04-15T10:58:35.606+0000] {task_command.py:426} INFO - Running <TaskInstance: firepoint_dbt_hourly.dbt_build_hourly manual__2026-04-15T10:55:33.208117+00:00 [running]> on host 0cf1a09c2af8
+[2026-04-15T10:58:35.867+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='firepoint' AIRFLOW_CTX_DAG_ID='firepoint_dbt_hourly' AIRFLOW_CTX_TASK_ID='dbt_build_hourly' AIRFLOW_CTX_EXECUTION_DATE='2026-04-15T10:55:33.208117+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-15T10:55:33.208117+00:00'
+[2026-04-15T10:58:35.869+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-04-15T10:58:35.869+0000] {logging_mixin.py:188} INFO - running: cd /opt/***/dbt && dbt build --select tag:hourly --profiles-dir /opt/***/dbt
+[2026-04-15T10:58:47.751+0000] {logging_mixin.py:188} INFO - 10:58:38  Running with dbt=1.11.8
+10:58:39  Registered adapter: duckdb=1.10.1
+10:58:39  Unable to do partial parsing because of a version mismatch
+10:58:41  [WARNING][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `relationships` defined on 'stg_employees' in
+package 'firepoint' (models/staging/_stg_models.yml). Arguments to generic tests
+should be nested under the `arguments` property.
+10:58:41  Found 24 models, 2 seeds, 29 data tests, 19 sources, 475 macros
+10:58:41  
+10:58:41  Concurrency: 4 threads (target='dev')
+10:58:41  
+10:58:42  1 of 45 START sql view model main_raw_dbt.raw_employees ........................ [RUN]
+10:58:42  2 of 45 START sql view model main_raw_dbt.raw_invoices ......................... [RUN]
+10:58:42  3 of 45 START sql view model main_raw_dbt.raw_negotiations ..................... [RUN]
+10:58:42  4 of 45 START sql view model main_raw_dbt.raw_production_orders ................ [RUN]
+10:58:42  2 of 45 OK created sql view model main_raw_dbt.raw_invoices .................... [OK in 0.33s]
+10:58:42  1 of 45 OK created sql view model main_raw_dbt.raw_employees ................... [OK in 0.34s]
+10:58:42  3 of 45 OK created sql view model main_raw_dbt.raw_negotiations ................ [OK in 0.34s]
+10:58:42  4 of 45 OK created sql view model main_raw_dbt.raw_production_orders ........... [OK in 0.34s]
+10:58:42  5 of 45 START sql view model main_raw_dbt.raw_products ......................... [RUN]
+10:58:42  6 of 45 START sql view model main_raw_dbt.raw_purchase_orders .................. [RUN]
+10:58:42  7 of 45 START sql view model main_raw_dbt.raw_sales_orders ..................... [RUN]
+10:58:42  8 of 45 START sql view model main_raw_dbt.raw_suppliers ........................ [RUN]
+10:58:42  5 of 45 OK created sql view model main_raw_dbt.raw_products .................... [OK in 0.27s]
+10:58:42  9 of 45 START sql view model main_staging.stg_invoices ......................... [RUN]
+10:58:42  6 of 45 OK created sql view model main_raw_dbt.raw_purchase_orders ............. [OK in 0.30s]
+10:58:42  7 of 45 OK created sql view model main_raw_dbt.raw_sales_orders ................ [OK in 0.32s]
+10:58:42  8 of 45 OK created sql view model main_raw_dbt.raw_suppliers ................... [OK in 0.32s]
+10:58:42  10 of 45 START sql view model main_staging.stg_employees ....................... [RUN]
+10:58:42  11 of 45 START sql view model main_staging.stg_negotiations .................... [RUN]
+10:58:42  12 of 45 START sql view model main_staging.stg_production_orders ............... [RUN]
+10:58:43  9 of 45 OK created sql view model main_staging.stg_invoices .................... [OK in 0.35s]
+10:58:43  10 of 45 OK created sql view model main_staging.stg_employees .................. [OK in 0.32s]
+10:58:43  13 of 45 START sql view model main_staging.stg_products ........................ [RUN]
+10:58:43  14 of 45 START sql view model main_staging.stg_purchase_orders ................. [RUN]
+10:58:43  12 of 45 OK created sql view model main_staging.stg_production_orders .......... [OK in 0.33s]
+10:58:43  11 of 45 OK created sql view model main_staging.stg_negotiations ............... [OK in 0.34s]
+10:58:43  15 of 45 START sql view model main_staging.stg_sales_orders .................... [RUN]
+10:58:43  16 of 45 START sql view model main_staging.stg_suppliers ....................... [RUN]
+10:58:43  13 of 45 OK created sql view model main_staging.stg_products ................... [OK in 0.42s]
+10:58:43  17 of 45 START test accepted_values_stg_invoices_source_type__sales_order__purchase_order  [RUN]
+10:58:43  14 of 45 OK created sql view model main_staging.stg_purchase_orders ............ [OK in 0.48s]
+10:58:43  18 of 45 START test accepted_values_stg_invoices_status__issued__paid__overdue__cancelled  [RUN]
+10:58:43  15 of 45 OK created sql view model main_staging.stg_sales_orders ............... [OK in 0.50s]
+10:58:43  16 of 45 OK created sql view model main_staging.stg_suppliers .................. [OK in 0.50s]
+10:58:43  19 of 45 START test not_null_stg_invoices_invoice_id ........................... [RUN]
+10:58:43  20 of 45 START test unique_stg_invoices_invoice_id ............................. [RUN]
+10:58:44  17 of 45 PASS accepted_values_stg_invoices_source_type__sales_order__purchase_order  [PASS in 0.21s]
+10:58:44  21 of 45 START test not_null_stg_employees_department_id ....................... [RUN]
+10:58:44  18 of 45 PASS accepted_values_stg_invoices_status__issued__paid__overdue__cancelled  [PASS in 0.20s]
+10:58:44  19 of 45 PASS not_null_stg_invoices_invoice_id ................................. [PASS in 0.14s]
+10:58:44  20 of 45 PASS unique_stg_invoices_invoice_id ................................... [PASS in 0.15s]
+10:58:44  22 of 45 START test not_null_stg_employees_employee_id ......................... [RUN]
+10:58:44  23 of 45 START test relationships_stg_employees_department_id__department_id__source_firepoint_departments_  [RUN]
+10:58:44  24 of 45 START test unique_stg_employees_employee_id ........................... [RUN]
+10:58:44  21 of 45 PASS not_null_stg_employees_department_id ............................. [PASS in 0.18s]
+10:58:44  24 of 45 PASS unique_stg_employees_employee_id ................................. [PASS in 0.13s]
+10:58:44  25 of 45 START test accepted_values_stg_production_orders_status__planned__in_progress__completed__cancelled  [RUN]
+10:58:44  26 of 45 START test not_null_stg_production_orders_prod_order_id ............... [RUN]
+10:58:44  23 of 45 PASS relationships_stg_employees_department_id__department_id__source_firepoint_departments_  [PASS in 0.17s]
+10:58:44  22 of 45 PASS not_null_stg_employees_employee_id ............................... [PASS in 0.18s]
+10:58:44  27 of 45 START test unique_stg_production_orders_prod_order_id ................. [RUN]
+10:58:44  28 of 45 START test accepted_values_stg_negotiations_final_outcome__contract_signed__deal_lost__still_negotiating  [RUN]
+10:58:44  26 of 45 PASS not_null_stg_production_orders_prod_order_id ..................... [PASS in 0.13s]
+10:58:44  29 of 45 START test not_null_stg_negotiations_negotiation_id ................... [RUN]
+10:58:44  25 of 45 PASS accepted_values_stg_production_orders_status__planned__in_progress__completed__cancelled  [PASS in 0.17s]
+10:58:44  27 of 45 PASS unique_stg_production_orders_prod_order_id ....................... [PASS in 0.13s]
+10:58:44  30 of 45 START test unique_stg_negotiations_negotiation_id ..................... [RUN]
+10:58:44  31 of 45 START test not_null_stg_products_product_code ......................... [RUN]
+10:58:44  28 of 45 PASS accepted_values_stg_negotiations_final_outcome__contract_signed__deal_lost__still_negotiating  [PASS in 0.19s]
+10:58:44  32 of 45 START test not_null_stg_products_product_id ........................... [RUN]
+10:58:44  29 of 45 PASS not_null_stg_negotiations_negotiation_id ......................... [PASS in 0.14s]
+10:58:44  33 of 45 START test unique_stg_products_product_code ........................... [RUN]
+10:58:44  30 of 45 PASS unique_stg_negotiations_negotiation_id ........................... [PASS in 0.15s]
+10:58:44  31 of 45 PASS not_null_stg_products_product_code ............................... [PASS in 0.16s]
+10:58:44  32 of 45 PASS not_null_stg_products_product_id ................................. [PASS in 0.13s]
+10:58:44  34 of 45 START test unique_stg_products_product_id ............................. [RUN]
+10:58:44  35 of 45 START test accepted_values_stg_purchase_orders_status__ordered__shipped__delivered__partially_delivered__cancelled  [RUN]
+10:58:44  36 of 45 START test not_null_stg_purchase_orders_order_id ...................... [RUN]
+10:58:44  34 of 45 PASS unique_stg_products_product_id ................................... [PASS in 0.15s]
+10:58:44  33 of 45 PASS unique_stg_products_product_code ................................. [PASS in 0.19s]
+10:58:44  36 of 45 PASS not_null_stg_purchase_orders_order_id ............................ [PASS in 0.14s]
+10:58:44  37 of 45 START test unique_stg_purchase_orders_order_id ........................ [RUN]
+10:58:44  38 of 45 START test accepted_values_stg_sales_orders_currency__USD__EUR ........ [RUN]
+10:58:44  39 of 45 START test accepted_values_stg_sales_orders_status__draft__active__fulfilled__terminated  [RUN]
+10:58:44  35 of 45 PASS accepted_values_stg_purchase_orders_status__ordered__shipped__delivered__partially_delivered__cancelled  [PASS in 0.18s]
+10:58:44  40 of 45 START test not_null_stg_sales_orders_order_id ......................... [RUN]
+10:58:44  40 of 45 PASS not_null_stg_sales_orders_order_id ............................... [PASS in 0.11s]
+10:58:44  37 of 45 PASS unique_stg_purchase_orders_order_id .............................. [PASS in 0.17s]
+10:58:44  41 of 45 START test not_null_stg_sales_orders_product_id ....................... [RUN]
+10:58:44  42 of 45 START test relationships_stg_sales_orders_product_id__product_id__ref_stg_products_  [RUN]
+10:58:45  38 of 45 PASS accepted_values_stg_sales_orders_currency__USD__EUR .............. [PASS in 0.19s]
+10:58:45  39 of 45 PASS accepted_values_stg_sales_orders_status__draft__active__fulfilled__terminated  [PASS in 0.19s]
+10:58:45  43 of 45 START test unique_stg_sales_orders_order_id ........................... [RUN]
+10:58:45  44 of 45 START test not_null_stg_suppliers_supplier_id ......................... [RUN]
+10:58:45  41 of 45 PASS not_null_stg_sales_orders_product_id ............................. [PASS in 0.18s]
+10:58:45  42 of 45 PASS relationships_stg_sales_orders_product_id__product_id__ref_stg_products_  [PASS in 0.17s]
+10:58:45  45 of 45 START test unique_stg_suppliers_supplier_id ........................... [RUN]
+10:58:45  43 of 45 PASS unique_stg_sales_orders_order_id ................................. [PASS in 0.15s]
+10:58:45  44 of 45 PASS not_null_stg_suppliers_supplier_id ............................... [PASS in 0.15s]
+10:58:45  45 of 45 PASS unique_stg_suppliers_supplier_id ................................. [PASS in 0.13s]
+10:58:45  
+10:58:45  Finished running 29 data tests, 16 view models in 0 hours 0 minutes and 3.54 seconds (3.54s).
+10:58:45  
+10:58:45  Completed successfully
+10:58:45  
+10:58:45  Done. PASS=45 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=45
+10:58:45  [WARNING][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 9 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[2026-04-15T10:58:47.752+0000] {python.py:237} INFO - Done. Returned value was: [0m10:58:38  Running with dbt=1.11.8
+[0m10:58:39  Registered adapter: duckdb=1.10.1
+[0m10:58:39  Unable to do partial parsing because of a version mismatch
+[0m10:58:41  [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `relationships` defined on 'stg_employees' in
+package 'firepoint' (models/staging/_stg_models.yml). Arguments to generic tests
+should be nested under the `arguments` property.
+[0m10:58:41  Found 24 models, 2 seeds, 29 data tests, 19 sources, 475 macros
+[0m10:58:41  
+[0m10:58:41  Concurrency: 4 threads (target='dev')
+[0m10:58:41  
+[0m10:58:42  1 of 45 START sql view model main_raw_dbt.raw_employees ........................ [RUN]
+[0m10:58:42  2 of 45 START sql view model main_raw_dbt.raw_invoices ......................... [RUN]
+[0m10:58:42  3 of 45 START sql view model main_raw_dbt.raw_negotiations ..................... [RUN]
+[0m10:58:42  4 of 45 START sql view model main_raw_dbt.raw_production_orders ................ [RUN]
+[0m10:58:42  2 of 45 OK created sql view model main_raw_dbt.raw_invoices .................... [[32mOK[0m in 0.33s]
+[0m10:58:42  1 of 45 OK created sql view model main_raw_dbt.raw_employees ................... [[32mOK[0m in 0.34s]
+[0m10:58:42  3 of 45 OK created sql view model main_raw_dbt.raw_negotiations ................ [[32mOK[0m in 0.34s]
+[0m10:58:42  4 of 45 OK created sql view model main_raw_dbt.raw_production_orders ........... [[32mOK[0m in 0.34s]
+[0m10:58:42  5 of 45 START sql view model main_raw_dbt.raw_products ......................... [RUN]
+[0m10:58:42  6 of 45 START sql view model main_raw_dbt.raw_purchase_orders .................. [RUN]
+[0m10:58:42  7 of 45 START sql view model main_raw_dbt.raw_sales_orders ..................... [RUN]
+[0m10:58:42  8 of 45 START sql view model main_raw_dbt.raw_suppliers ........................ [RUN]
+[0m10:58:42  5 of 45 OK created sql view model main_raw_dbt.raw_products .................... [[32mOK[0m in 0.27s]
+[0m10:58:42  9 of 45 START sql view model main_staging.stg_invoices ......................... [RUN]
+[0m10:58:42  6 of 45 OK created sql view model main_raw_dbt.raw_purchase_orders ............. [[32mOK[0m in 0.30s]
+[0m10:58:42  7 of 45 OK created sql view model main_raw_dbt.raw_sales_orders ................ [[32mOK[0m in 0.32s]
+[0m10:58:42  8 of 45 OK created sql view model main_raw_dbt.raw_suppliers ................... [[32mOK[0m in 0.32s]
+[0m10:58:42  10 of 45 START sql view model main_staging.stg_employees ....................... [RUN]
+[0m10:58:42  11 of 45 START sql view model main_staging.stg_negotiations .................... [RUN]
+[0m10:58:42  12 of 45 START sql view model main_staging.stg_production_orders ............... [RUN]
+[0m10:58:43  9 of 45 OK created sql view model main_staging.stg_invoices .................... [[32mOK[0m in 0.35s]
+[0m10:58:43  10 of 45 OK created sql view model main_staging.stg_employees .................. [[32mOK[0m in 0.32s]
+[0m10:58:43  13 of 45 START sql view model main_staging.stg_products ........................ [RUN]
+[0m10:58:43  14 of 45 START sql view model main_staging.stg_purchase_orders ................. [RUN]
+[0m10:58:43  12 of 45 OK created sql view model main_staging.stg_production_orders .......... [[32mOK[0m in 0.33s]
+[0m10:58:43  11 of 45 OK created sql view model main_staging.stg_negotiations ............... [[32mOK[0m in 0.34s]
+[0m10:58:43  15 of 45 START sql view model main_staging.stg_sales_orders .................... [RUN]
+[0m10:58:43  16 of 45 START sql view model main_staging.stg_suppliers ....................... [RUN]
+[0m10:58:43  13 of 45 OK created sql view model main_staging.stg_products ................... [[32mOK[0m in 0.42s]
+[0m10:58:43  17 of 45 START test accepted_values_stg_invoices_source_type__sales_order__purchase_order  [RUN]
+[0m10:58:43  14 of 45 OK created sql view model main_staging.stg_purchase_orders ............ [[32mOK[0m in 0.48s]
+[0m10:58:43  18 of 45 START test accepted_values_stg_invoices_status__issued__paid__overdue__cancelled  [RUN]
+[0m10:58:43  15 of 45 OK created sql view model main_staging.stg_sales_orders ............... [[32mOK[0m in 0.50s]
+[0m10:58:43  16 of 45 OK created sql view model main_staging.stg_suppliers .................. [[32mOK[0m in 0.50s]
+[0m10:58:43  19 of 45 START test not_null_stg_invoices_invoice_id ........................... [RUN]
+[0m10:58:43  20 of 45 START test unique_stg_invoices_invoice_id ............................. [RUN]
+[0m10:58:44  17 of 45 PASS accepted_values_stg_invoices_source_type__sales_order__purchase_order  [[32mPASS[0m in 0.21s]
+[0m10:58:44  21 of 45 START test not_null_stg_employees_department_id ....................... [RUN]
+[0m10:58:44  18 of 45 PASS accepted_values_stg_invoices_status__issued__paid__overdue__cancelled  [[32mPASS[0m in 0.20s]
+[0m10:58:44  19 of 45 PASS not_null_stg_invoices_invoice_id ................................. [[32mPASS[0m in 0.14s]
+[0m10:58:44  20 of 45 PASS unique_stg_invoices_invoice_id ................................... [[32mPASS[0m in 0.15s]
+[0m10:58:44  22 of 45 START test not_null_stg_employees_employee_id ......................... [RUN]
+[0m10:58:44  23 of 45 START test relationships_stg_employees_department_id__department_id__source_firepoint_departments_  [RUN]
+[0m10:58:44  24 of 45 START test unique_stg_employees_employee_id ........................... [RUN]
+[0m10:58:44  21 of 45 PASS not_null_stg_employees_department_id ............................. [[32mPASS[0m in 0.18s]
+[0m10:58:44  24 of 45 PASS unique_stg_employees_employee_id ................................. [[32mPASS[0m in 0.13s]
+[0m10:58:44  25 of 45 START test accepted_values_stg_production_orders_status__planned__in_progress__completed__cancelled  [RUN]
+[0m10:58:44  26 of 45 START test not_null_stg_production_orders_prod_order_id ............... [RUN]
+[0m10:58:44  23 of 45 PASS relationships_stg_employees_department_id__department_id__source_firepoint_departments_  [[32mPASS[0m in 0.17s]
+[0m10:58:44  22 of 45 PASS not_null_stg_employees_employee_id ............................... [[32mPASS[0m in 0.18s]
+[0m10:58:44  27 of 45 START test unique_stg_production_orders_prod_order_id ................. [RUN]
+[0m10:58:44  28 of 45 START test accepted_values_stg_negotiations_final_outcome__contract_signed__deal_lost__still_negotiating  [RUN]
+[0m10:58:44  26 of 45 PASS not_null_stg_production_orders_prod_order_id ..................... [[32mPASS[0m in 0.13s]
+[0m10:58:44  29 of 45 START test not_null_stg_negotiations_negotiation_id ................... [RUN]
+[0m10:58:44  25 of 45 PASS accepted_values_stg_production_orders_status__planned__in_progress__completed__cancelled  [[32mPASS[0m in 0.17s]
+[0m10:58:44  27 of 45 PASS unique_stg_production_orders_prod_order_id ....................... [[32mPASS[0m in 0.13s]
+[0m10:58:44  30 of 45 START test unique_stg_negotiations_negotiation_id ..................... [RUN]
+[0m10:58:44  31 of 45 START test not_null_stg_products_product_code ......................... [RUN]
+[0m10:58:44  28 of 45 PASS accepted_values_stg_negotiations_final_outcome__contract_signed__deal_lost__still_negotiating  [[32mPASS[0m in 0.19s]
+[0m10:58:44  32 of 45 START test not_null_stg_products_product_id ........................... [RUN]
+[0m10:58:44  29 of 45 PASS not_null_stg_negotiations_negotiation_id ......................... [[32mPASS[0m in 0.14s]
+[0m10:58:44  33 of 45 START test unique_stg_products_product_code ........................... [RUN]
+[0m10:58:44  30 of 45 PASS unique_stg_negotiations_negotiation_id ........................... [[32mPASS[0m in 0.15s]
+[0m10:58:44  31 of 45 PASS not_null_stg_products_product_code ............................... [[32mPASS[0m in 0.16s]
+[0m10:58:44  32 of 45 PASS not_null_stg_products_product_id ................................. [[32mPASS[0m in 0.13s]
+[0m10:58:44  34 of 45 START test unique_stg_products_product_id ............................. [RUN]
+[0m10:58:44  35 of 45 START test accepted_values_stg_purchase_orders_status__ordered__shipped__delivered__partially_delivered__cancelled  [RUN]
+[0m10:58:44  36 of 45 START test not_null_stg_purchase_orders_order_id ...................... [RUN]
+[0m10:58:44  34 of 45 PASS unique_stg_products_product_id ................................... [[32mPASS[0m in 0.15s]
+[0m10:58:44  33 of 45 PASS unique_stg_products_product_code ................................. [[32mPASS[0m in 0.19s]
+[0m10:58:44  36 of 45 PASS not_null_stg_purchase_orders_order_id ............................ [[32mPASS[0m in 0.14s]
+[0m10:58:44  37 of 45 START test unique_stg_purchase_orders_order_id ........................ [RUN]
+[0m10:58:44  38 of 45 START test accepted_values_stg_sales_orders_currency__USD__EUR ........ [RUN]
+[0m10:58:44  39 of 45 START test accepted_values_stg_sales_orders_status__draft__active__fulfilled__terminated  [RUN]
+[0m10:58:44  35 of 45 PASS accepted_values_stg_purchase_orders_status__ordered__shipped__delivered__partially_delivered__cancelled  [[32mPASS[0m in 0.18s]
+[0m10:58:44  40 of 45 START test not_null_stg_sales_orders_order_id ......................... [RUN]
+[0m10:58:44  40 of 45 PASS not_null_stg_sales_orders_order_id ............................... [[32mPASS[0m in 0.11s]
+[0m10:58:44  37 of 45 PASS unique_stg_purchase_orders_order_id .............................. [[32mPASS[0m in 0.17s]
+[0m10:58:44  41 of 45 START test not_null_stg_sales_orders_product_id ....................... [RUN]
+[0m10:58:44  42 of 45 START test relationships_stg_sales_orders_product_id__product_id__ref_stg_products_  [RUN]
+[0m10:58:45  38 of 45 PASS accepted_values_stg_sales_orders_currency__USD__EUR .............. [[32mPASS[0m in 0.19s]
+[0m10:58:45  39 of 45 PASS accepted_values_stg_sales_orders_status__draft__active__fulfilled__terminated  [[32mPASS[0m in 0.19s]
+[0m10:58:45  43 of 45 START test unique_stg_sales_orders_order_id ........................... [RUN]
+[0m10:58:45  44 of 45 START test not_null_stg_suppliers_supplier_id ......................... [RUN]
+[0m10:58:45  41 of 45 PASS not_null_stg_sales_orders_product_id ............................. [[32mPASS[0m in 0.18s]
+[0m10:58:45  42 of 45 PASS relationships_stg_sales_orders_product_id__product_id__ref_stg_products_  [[32mPASS[0m in 0.17s]
+[0m10:58:45  45 of 45 START test unique_stg_suppliers_supplier_id ........................... [RUN]
+[0m10:58:45  43 of 45 PASS unique_stg_sales_orders_order_id ................................. [[32mPASS[0m in 0.15s]
+[0m10:58:45  44 of 45 PASS not_null_stg_suppliers_supplier_id ............................... [[32mPASS[0m in 0.15s]
+[0m10:58:45  45 of 45 PASS unique_stg_suppliers_supplier_id ................................. [[32mPASS[0m in 0.13s]
+[0m10:58:45  
+[0m10:58:45  Finished running 29 data tests, 16 view models in 0 hours 0 minutes and 3.54 seconds (3.54s).
+[0m10:58:45  
+[0m10:58:45  [32mCompleted successfully[0m
+[0m10:58:45  
+[0m10:58:45  Done. PASS=45 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=45
+[0m10:58:45  [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 9 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+
+[2026-04-15T10:58:47.753+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-04-15T10:58:47.818+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=firepoint_dbt_hourly, task_id=dbt_build_hourly, run_id=manual__2026-04-15T10:55:33.208117+00:00, execution_date=20260415T105533, start_date=20260415T105835, end_date=20260415T105847
+[2026-04-15T10:58:47.899+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-04-15T10:58:47.930+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-04-15T10:58:47.932+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

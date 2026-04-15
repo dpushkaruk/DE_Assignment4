@@ -2,8 +2,8 @@ from airflow.decorators import dag, task
 from datetime import datetime, timedelta
 import subprocess
 
-DBT_PROJECT_DIR = "/opt/airflow/dbt_project"
-DBT_PROFILES_DIR = "/opt/airflow/dbt_project"
+DBT_PROJECT_DIR = "/opt/airflow/dbt"
+DBT_PROFILES_DIR = "/opt/airflow/dbt"
 
 default_args = {
     "owner": "firepoint",

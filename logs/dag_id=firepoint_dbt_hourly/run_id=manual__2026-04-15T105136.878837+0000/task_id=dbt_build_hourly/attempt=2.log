@@ -1,0 +1,48 @@
+[2026-04-15T10:54:41.875+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-04-15T10:54:41.919+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: firepoint_dbt_hourly.dbt_build_hourly manual__2026-04-15T10:51:36.878837+00:00 [queued]>
+[2026-04-15T10:54:41.932+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: firepoint_dbt_hourly.dbt_build_hourly manual__2026-04-15T10:51:36.878837+00:00 [queued]>
+[2026-04-15T10:54:41.933+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 2
+[2026-04-15T10:54:41.953+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): dbt_build_hourly> on 2026-04-15 10:51:36.878837+00:00
+[2026-04-15T10:54:41.958+0000] {standard_task_runner.py:64} INFO - Started process 552 to run task
+[2026-04-15T10:54:41.962+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'firepoint_dbt_hourly', 'dbt_build_hourly', 'manual__2026-04-15T10:51:36.878837+00:00', '--job-id', '80', '--raw', '--subdir', 'DAGS_FOLDER/dbt_dag.py', '--cfg-path', '/tmp/tmpn8c04omz']
+[2026-04-15T10:54:41.967+0000] {standard_task_runner.py:91} INFO - Job 80: Subtask dbt_build_hourly
+[2026-04-15T10:54:42.084+0000] {task_command.py:426} INFO - Running <TaskInstance: firepoint_dbt_hourly.dbt_build_hourly manual__2026-04-15T10:51:36.878837+00:00 [running]> on host 9c22045bc147
+[2026-04-15T10:54:42.163+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='firepoint' AIRFLOW_CTX_DAG_ID='firepoint_dbt_hourly' AIRFLOW_CTX_TASK_ID='dbt_build_hourly' AIRFLOW_CTX_EXECUTION_DATE='2026-04-15T10:51:36.878837+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-15T10:51:36.878837+00:00'
+[2026-04-15T10:54:42.166+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-04-15T10:54:42.167+0000] {logging_mixin.py:188} INFO - running: cd /opt/***/dbt && dbt build --select tag:hourly --profiles-dir /opt/***/dbt
+[2026-04-15T10:54:42.170+0000] {logging_mixin.py:188} INFO - /bin/sh: 1: cd: can't cd to /opt/***/dbt
+[2026-04-15T10:54:42.171+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-04-15T10:54:42.172+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/decorators/base.py", line 265, in execute
+    return_value = super().execute(context)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/dbt_dag.py", line 62, in dbt_build_hourly
+    return run_dbt_command("build --select tag:hourly")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/dbt_dag.py", line 26, in run_dbt_command
+    raise Exception(f"dbt command failed: {command}")
+Exception: dbt command failed: build --select tag:hourly
+[2026-04-15T10:54:42.188+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=firepoint_dbt_hourly, task_id=dbt_build_hourly, run_id=manual__2026-04-15T10:51:36.878837+00:00, execution_date=20260415T105136, start_date=20260415T105441, end_date=20260415T105442
+[2026-04-15T10:54:42.200+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 80 for task dbt_build_hourly (dbt command failed: build --select tag:hourly; 552)
+[2026-04-15T10:54:42.245+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2026-04-15T10:54:42.262+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-04-15T10:54:42.265+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
