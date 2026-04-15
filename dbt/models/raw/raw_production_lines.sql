@@ -1,0 +1,1 @@
+select * from {{ source('firepoint', 'production_lines') }}

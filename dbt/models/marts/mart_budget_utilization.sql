@@ -1,20 +1,19 @@
 {{ config(tags=['daily']) }}
 
 with budgets as (
-    select * from {{ source('firepoint', 'budgets') }}
+    select * from {{ ref('stg_budgets') }}
 ),
 
 departments as (
-    select * from {{ source('firepoint', 'departments') }}
+    select * from {{ ref('stg_departments') }}
 )
 
-select b.budget_id, b.department_id, d.name as department_name,
-    b.fiscal_year, b.amount as budget_amount, b.spent as budget_spent,
-    b.amount - b.spent as budget_remaining,
-    round(b.spent * 100.0 / b.amount, 2) as utilization_pct,
+select b.budget_id, b.department_id, d.department_name,
+    b.fiscal_year, b.budget_amount, b.budget_spent,
+    b.budget_remaining, b.utilization_pct, 
     case
-        when b.spent * 100.0 / b.amount > 90 then 'critical'
-        when b.spent * 100.0 / b.amount > 75 then 'warning'
+        when b.utilization_pct > 90 then 'critical'
+        when b.utilization_pct > 75 then 'warning'
         else 'healthy'
     end as budget_status
 from budgets b

@@ -1,0 +1,1 @@
+select * from {{ source('firepoint', 'research_projects') }}
