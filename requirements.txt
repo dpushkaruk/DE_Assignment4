@@ -1,0 +1,6 @@
+pandas
+duckdb
+mysql-connector-python
+minio
+dbt-core
+dbt-duckdb

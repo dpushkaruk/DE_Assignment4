@@ -1,0 +1,26 @@
+version: 2
+
+sources:
+  - name: firepoint
+    schema: raw
+    description: "Load raw data"
+    tables:
+      - name: products
+      - name: employees
+      - name: departments
+      - name: sales_orders
+      - name: production_orders
+      - name: production_lines
+      - name: production_stages
+      - name: invoices
+      - name: payments
+      - name: negotiations
+      - name: negotiation_rounds
+      - name: purchase_orders
+      - name: suppliers
+      - name: contractors
+      - name: components
+      - name: budgets
+      - name: research_projects
+      - name: milestones
+      - name: employee_attendance

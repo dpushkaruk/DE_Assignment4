@@ -1,0 +1,12 @@
+[2026-04-14T18:23:22.649+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-04-14T18:23:22.803+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: firepoint_dbt_hourly.dbt_build_hourly manual__2026-04-14T18:23:19.599203+00:00 [queued]>
+[2026-04-14T18:23:22.836+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: firepoint_dbt_hourly.dbt_build_hourly manual__2026-04-14T18:23:19.599203+00:00 [queued]>
+[2026-04-14T18:23:22.837+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2026-04-14T18:23:22.875+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): dbt_build_hourly> on 2026-04-14 18:23:19.599203+00:00
+[2026-04-14T18:23:22.912+0000] {standard_task_runner.py:64} INFO - Started process 2394 to run task
+[2026-04-14T18:23:22.937+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'firepoint_dbt_hourly', 'dbt_build_hourly', 'manual__2026-04-14T18:23:19.599203+00:00', '--job-id', '35', '--raw', '--subdir', 'DAGS_FOLDER/dbt_dag.py', '--cfg-path', '/tmp/tmpwy07ewf0']
+[2026-04-14T18:23:23.011+0000] {standard_task_runner.py:91} INFO - Job 35: Subtask dbt_build_hourly
+[2026-04-14T18:23:23.312+0000] {task_command.py:426} INFO - Running <TaskInstance: firepoint_dbt_hourly.dbt_build_hourly manual__2026-04-14T18:23:19.599203+00:00 [running]> on host 9c22045bc147
+[2026-04-14T18:23:25.522+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='firepoint' AIRFLOW_CTX_DAG_ID='firepoint_dbt_hourly' AIRFLOW_CTX_TASK_ID='dbt_build_hourly' AIRFLOW_CTX_EXECUTION_DATE='2026-04-14T18:23:19.599203+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-14T18:23:19.599203+00:00'
+[2026-04-14T18:23:25.529+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-04-14T18:23:25.540+0000] {logging_mixin.py:188} INFO - running: cd /opt/***/dbt_project && dbt build --select tag:hourly --profiles-dir /opt/***/dbt_project

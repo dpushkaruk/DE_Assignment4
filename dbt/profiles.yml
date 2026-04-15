@@ -1,0 +1,8 @@
+firepoint:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: ../duckdb/firepoint.duckdb
+      schema: main
+      threads: 4

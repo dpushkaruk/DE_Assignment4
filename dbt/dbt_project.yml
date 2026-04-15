@@ -1,0 +1,32 @@
+name: 'firepoint'
+version: '1.0.0'
+
+profile: 'firepoint'
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+macro-paths: ["macros"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+seeds:
+  firepoint:
+    +schema: seeds
+
+models:
+  firepoint:
+    raw:
+      +schema: raw_dbt
+      +materialized: view
+      +tags: ['hourly']
+    staging:
+      +schema: staging
+      +materialized: view
+      +tags: ['hourly']
+    marts:
+      +schema: marts
+      +materialized: table
+      +tags: ['daily']

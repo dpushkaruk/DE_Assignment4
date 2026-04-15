@@ -1,0 +1,20 @@
+[2026-04-14T17:21:04.290+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-04-14T17:21:04.333+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: firepoint_etl.extract_json manual__2026-04-14T17:20:55.694120+00:00 [queued]>
+[2026-04-14T17:21:04.349+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: firepoint_etl.extract_json manual__2026-04-14T17:20:55.694120+00:00 [queued]>
+[2026-04-14T17:21:04.350+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2026-04-14T17:21:04.368+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract_json> on 2026-04-14 17:20:55.694120+00:00
+[2026-04-14T17:21:04.379+0000] {standard_task_runner.py:64} INFO - Started process 2124 to run task
+[2026-04-14T17:21:04.383+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'firepoint_etl', 'extract_json', 'manual__2026-04-14T17:20:55.694120+00:00', '--job-id', '30', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp5x8_46ol']
+[2026-04-14T17:21:04.386+0000] {standard_task_runner.py:91} INFO - Job 30: Subtask extract_json
+[2026-04-14T17:21:04.486+0000] {task_command.py:426} INFO - Running <TaskInstance: firepoint_etl.extract_json manual__2026-04-14T17:20:55.694120+00:00 [running]> on host 9c22045bc147
+[2026-04-14T17:21:04.615+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='firepoint' AIRFLOW_CTX_DAG_ID='firepoint_etl' AIRFLOW_CTX_TASK_ID='extract_json' AIRFLOW_CTX_EXECUTION_DATE='2026-04-14T17:20:55.694120+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-14T17:20:55.694120+00:00'
+[2026-04-14T17:21:04.617+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-04-14T17:21:04.923+0000] {logging_mixin.py:188} INFO -   raw.negotiations: 2016 rows
+[2026-04-14T17:21:04.962+0000] {logging_mixin.py:188} INFO -   raw.negotiation_rounds: 6911 rows
+[2026-04-14T17:21:05.127+0000] {logging_mixin.py:188} INFO - json extraction complete
+[2026-04-14T17:21:05.137+0000] {python.py:237} INFO - Done. Returned value was: {'negotiations': 2016, 'rounds': 6911}
+[2026-04-14T17:21:05.138+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-04-14T17:21:05.180+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=firepoint_etl, task_id=extract_json, run_id=manual__2026-04-14T17:20:55.694120+00:00, execution_date=20260414T172055, start_date=20260414T172104, end_date=20260414T172105
+[2026-04-14T17:21:05.240+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-04-14T17:21:05.273+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-04-14T17:21:05.277+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

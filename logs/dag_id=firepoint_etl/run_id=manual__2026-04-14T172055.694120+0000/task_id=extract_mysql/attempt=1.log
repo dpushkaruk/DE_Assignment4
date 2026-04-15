@@ -1,0 +1,66 @@
+[2026-04-14T17:20:59.147+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-04-14T17:20:59.259+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: firepoint_etl.extract_mysql manual__2026-04-14T17:20:55.694120+00:00 [queued]>
+[2026-04-14T17:20:59.281+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: firepoint_etl.extract_mysql manual__2026-04-14T17:20:55.694120+00:00 [queued]>
+[2026-04-14T17:20:59.283+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2026-04-14T17:20:59.342+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract_mysql> on 2026-04-14 17:20:55.694120+00:00
+[2026-04-14T17:20:59.386+0000] {standard_task_runner.py:64} INFO - Started process 2105 to run task
+[2026-04-14T17:20:59.390+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'firepoint_etl', 'extract_mysql', 'manual__2026-04-14T17:20:55.694120+00:00', '--job-id', '29', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp2j3m4l5a']
+[2026-04-14T17:20:59.407+0000] {standard_task_runner.py:91} INFO - Job 29: Subtask extract_mysql
+[2026-04-14T17:20:59.614+0000] {task_command.py:426} INFO - Running <TaskInstance: firepoint_etl.extract_mysql manual__2026-04-14T17:20:55.694120+00:00 [running]> on host 9c22045bc147
+[2026-04-14T17:20:59.866+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='firepoint' AIRFLOW_CTX_DAG_ID='firepoint_etl' AIRFLOW_CTX_TASK_ID='extract_mysql' AIRFLOW_CTX_EXECUTION_DATE='2026-04-14T17:20:55.694120+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-14T17:20:55.694120+00:00'
+[2026-04-14T17:20:59.868+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-04-14T17:21:00.190+0000] {base.py:84} INFO - Using connection ID 'mysql_firepoint' for task execution.
+[2026-04-14T17:21:00.295+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/***/providers/common/sql/hooks/sql.py:269 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2026-04-14T17:21:00.359+0000] {logging_mixin.py:188} INFO -   raw.departments: 6 rows
+[2026-04-14T17:21:00.381+0000] {base.py:84} INFO - Using connection ID 'mysql_firepoint' for task execution.
+[2026-04-14T17:21:00.398+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/***/providers/common/sql/hooks/sql.py:269 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2026-04-14T17:21:00.436+0000] {logging_mixin.py:188} INFO -   raw.employees: 190 rows
+[2026-04-14T17:21:00.472+0000] {base.py:84} INFO - Using connection ID 'mysql_firepoint' for task execution.
+[2026-04-14T17:21:00.489+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/***/providers/common/sql/hooks/sql.py:269 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2026-04-14T17:21:00.517+0000] {logging_mixin.py:188} INFO -   raw.suppliers: 70 rows
+[2026-04-14T17:21:00.541+0000] {base.py:84} INFO - Using connection ID 'mysql_firepoint' for task execution.
+[2026-04-14T17:21:00.558+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/***/providers/common/sql/hooks/sql.py:269 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2026-04-14T17:21:00.582+0000] {logging_mixin.py:188} INFO -   raw.components: 37 rows
+[2026-04-14T17:21:00.605+0000] {base.py:84} INFO - Using connection ID 'mysql_firepoint' for task execution.
+[2026-04-14T17:21:00.623+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/***/providers/common/sql/hooks/sql.py:269 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2026-04-14T17:21:00.687+0000] {logging_mixin.py:188} INFO -   raw.purchase_orders: 5000 rows
+[2026-04-14T17:21:00.708+0000] {base.py:84} INFO - Using connection ID 'mysql_firepoint' for task execution.
+[2026-04-14T17:21:00.725+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/***/providers/common/sql/hooks/sql.py:269 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2026-04-14T17:21:00.748+0000] {logging_mixin.py:188} INFO -   raw.contractors: 25 rows
+[2026-04-14T17:21:00.766+0000] {base.py:84} INFO - Using connection ID 'mysql_firepoint' for task execution.
+[2026-04-14T17:21:00.782+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/***/providers/common/sql/hooks/sql.py:269 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2026-04-14T17:21:00.869+0000] {logging_mixin.py:188} INFO -   raw.sales_orders: 3000 rows
+[2026-04-14T17:21:00.883+0000] {base.py:84} INFO - Using connection ID 'mysql_firepoint' for task execution.
+[2026-04-14T17:21:00.899+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/***/providers/common/sql/hooks/sql.py:269 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2026-04-14T17:21:00.917+0000] {logging_mixin.py:188} INFO -   raw.production_lines: 8 rows
+[2026-04-14T17:21:00.931+0000] {base.py:84} INFO - Using connection ID 'mysql_firepoint' for task execution.
+[2026-04-14T17:21:00.947+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/***/providers/common/sql/hooks/sql.py:269 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2026-04-14T17:21:00.970+0000] {logging_mixin.py:188} INFO -   raw.products: 5 rows
+[2026-04-14T17:21:00.984+0000] {base.py:84} INFO - Using connection ID 'mysql_firepoint' for task execution.
+[2026-04-14T17:21:01.002+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/***/providers/common/sql/hooks/sql.py:269 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2026-04-14T17:21:01.027+0000] {logging_mixin.py:188} INFO -   raw.production_orders: 300 rows
+[2026-04-14T17:21:01.043+0000] {base.py:84} INFO - Using connection ID 'mysql_firepoint' for task execution.
+[2026-04-14T17:21:01.060+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/***/providers/common/sql/hooks/sql.py:269 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2026-04-14T17:21:01.134+0000] {logging_mixin.py:188} INFO -   raw.production_stages: 1932 rows
+[2026-04-14T17:21:01.154+0000] {base.py:84} INFO - Using connection ID 'mysql_firepoint' for task execution.
+[2026-04-14T17:21:01.173+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/***/providers/common/sql/hooks/sql.py:269 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2026-04-14T17:21:01.193+0000] {logging_mixin.py:188} INFO -   raw.budgets: 18 rows
+[2026-04-14T17:21:01.209+0000] {base.py:84} INFO - Using connection ID 'mysql_firepoint' for task execution.
+[2026-04-14T17:21:01.220+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/***/providers/common/sql/hooks/sql.py:269 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2026-04-14T17:21:01.420+0000] {logging_mixin.py:188} INFO -   raw.invoices: 6887 rows
+[2026-04-14T17:21:01.439+0000] {base.py:84} INFO - Using connection ID 'mysql_firepoint' for task execution.
+[2026-04-14T17:21:01.453+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/***/providers/common/sql/hooks/sql.py:269 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2026-04-14T17:21:01.515+0000] {logging_mixin.py:188} INFO -   raw.payments: 3694 rows
+[2026-04-14T17:21:01.532+0000] {base.py:84} INFO - Using connection ID 'mysql_firepoint' for task execution.
+[2026-04-14T17:21:01.547+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/***/providers/common/sql/hooks/sql.py:269 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2026-04-14T17:21:01.568+0000] {logging_mixin.py:188} INFO -   raw.research_projects: 8 rows
+[2026-04-14T17:21:01.583+0000] {base.py:84} INFO - Using connection ID 'mysql_firepoint' for task execution.
+[2026-04-14T17:21:01.600+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/***/providers/common/sql/hooks/sql.py:269 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2026-04-14T17:21:01.794+0000] {logging_mixin.py:188} INFO -   raw.milestones: 45 rows
+[2026-04-14T17:21:02.050+0000] {logging_mixin.py:188} INFO - mysql extraction complete
+[2026-04-14T17:21:02.051+0000] {python.py:237} INFO - Done. Returned value was: {'departments': 6, 'employees': 190, 'suppliers': 70, 'components': 37, 'purchase_orders': 5000, 'contractors': 25, 'sales_orders': 3000, 'production_lines': 8, 'products': 5, 'production_orders': 300, 'production_stages': 1932, 'budgets': 18, 'invoices': 6887, 'payments': 3694, 'research_projects': 8, 'milestones': 45}
+[2026-04-14T17:21:02.052+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-04-14T17:21:02.099+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=firepoint_etl, task_id=extract_mysql, run_id=manual__2026-04-14T17:20:55.694120+00:00, execution_date=20260414T172055, start_date=20260414T172059, end_date=20260414T172102
+[2026-04-14T17:21:02.163+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-04-14T17:21:02.205+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-04-14T17:21:02.211+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

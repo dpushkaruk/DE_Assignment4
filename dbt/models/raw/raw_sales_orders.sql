@@ -1,0 +1,1 @@
+select * from {{ source('firepoint', 'sales_orders') }}

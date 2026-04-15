@@ -1,0 +1,6 @@
+product_code,product_name,product_class,product_type,max_range_km,max_speed_ms
+FP-1,FP-1 Deep Strike UAV,deep_strike_uav,uav,1000,180
+FP-2,FP-2 Front Strike UAV,front_strike_uav,uav,200,150
+FP-5,FP-5 Flamingo,cruise_missile,missile,3000,250
+FP-7,FP-7 Tactical Ballistic Missile,tactical_ballistic_missile,missile,200,1500
+FP-9,FP-9 Extended Range Ballistic Missile,ballistic_missile,missile,855,2200
